@@ -9,7 +9,6 @@ function inWindow(start, end, now = new Date()){
   const [sh,sm] = start.split(':').map(Number), [eh,em] = end.split(':').map(Number);
   const s = new Date(now), e = new Date(now);
   s.setHours(sh,sm,0,0); e.setHours(eh,em,0,0);
-  // overnight window handled
   return (sh*60+sm) <= (eh*60+em) ? (now>=s && now<=e) : (now>=s || now<=e);
 }
 
